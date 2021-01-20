@@ -1,7 +1,10 @@
 package tech.bootloader.arocqb
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
@@ -15,13 +18,21 @@ import tech.bootloader.arocqb.util.DBManager
 import java.lang.Exception
 
 
-class SplashActivity : AppCompatActivity(),InterfaceInitializationView {
+class SplashActivity : AppCompatActivity(), InterfaceInitializationView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        findViewById<View>(R.id.progressBar).post{
-            initPresenter()
+        findViewById<View>(R.id.progressBar).post {
+            val sp = getSharedPreferences("first", Context.MODE_PRIVATE)
+            val boolean = sp.getBoolean("first", true)
+            if (boolean) {
+                initPresenter()
+            } else {
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
         }
+
 
     }
 
@@ -103,6 +114,7 @@ class SplashActivity : AppCompatActivity(),InterfaceInitializationView {
         Log.d("tag", "c Size: ${lc.size}")
 
         startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 
     override fun initView() {
@@ -124,7 +136,8 @@ class SplashActivity : AppCompatActivity(),InterfaceInitializationView {
         try {
             dbHelper.closeDatabase()
             startActivity(Intent(this, MainActivity::class.java))
-        }catch (e:Exception){
+            finish()
+        } catch (e: Exception) {
             e.printStackTrace()
             initData()
 

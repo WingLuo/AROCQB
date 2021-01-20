@@ -15,11 +15,12 @@ import tech.bootloader.arocqb.R;
 
 public class DBManager {
     private final int BUFFER_SIZE = 400000;
-    public static final String DB_NAME = "ExamQuestionBank.db"; //保存的数据库文件名
+    //保存的数据库文件名
+    public static final String DB_NAME = "ExamQuestionBank.db";
     public static String PACKAGE_NAME = "tech.bootloader.arocqb"  ;
     public static final String DB_PATH = "/data"
             + Environment.getDataDirectory().getAbsolutePath() + "/"
-            + PACKAGE_NAME;  //在手机里存放数据库的位置
+            + PACKAGE_NAME+"/databases";  //在手机里存放数据库的位置
     private SQLiteDatabase database;
     private Context context;
 
@@ -29,15 +30,23 @@ public class DBManager {
     }
 
     public void openDatabase() {
-        this.database = this.openDatabase(DB_PATH + "/databases/" + DB_NAME);
+        this.database = this.openDatabase(DB_PATH + "/" + DB_NAME);
     }
 
     private SQLiteDatabase openDatabase(String dbfile) {
         try {
-            if (!(new File(dbfile).exists())) {//判断数据库文件是否存在，若不存在则执行导入，否则直接打开数据库
+            File file=new File(dbfile);
+            //判断数据库文件是否存在，若不存在则执行导入，否则直接打开数据库
+            if (!(file.exists())) {
+                File folder=new File(DB_PATH);
+                if (!folder.exists()){
+                    //路径不存在  创建路径
+                    folder.mkdirs();
+                }
+
                 InputStream is = this.context.getResources().openRawResource(
                         R.raw.exam_question_bank); //欲导入的数据库
-                FileOutputStream fos = new FileOutputStream(dbfile);
+                FileOutputStream fos = new FileOutputStream(file);
                 byte[] buffer = new byte[BUFFER_SIZE];
                 int count = 0;
                 while ((count = is.read(buffer)) > 0) {
