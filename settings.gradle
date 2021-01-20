@@ -1,0 +1,3 @@
+include ':androidbasic'
+include ':app'
+rootProject.name = "AROCQB"

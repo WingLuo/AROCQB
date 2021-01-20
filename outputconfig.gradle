@@ -1,0 +1,14 @@
+android.applicationVariants.all { variant ->
+    def appName="血透居家管理"
+
+    //添加git commit Id 信息，可以对应上 打包那条提交记录 更新日期：2020/07/07
+    def cmd="git rev-parse --short HEAD"
+
+    def commitId=cmd.execute().text.trim()
+
+    def versionName="${variant.versionName}"
+    variant.outputs.all { output ->
+        print(output)
+        outputFileName = "${appName}_${versionName}_${variant.buildType.name}_${commitId}_${new Date().format("yyyyMMdd-HHmmss")}.apk"
+    }
+}
