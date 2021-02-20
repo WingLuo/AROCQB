@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">业余电台操作证考试宝典</string>
     <string name="general_question_bank">总题库</string>
-    <string name="type_a_question_bank">A类题库</string>
-    <string name="type_b_question_bank">B类题库</string>
-    <string name="type_c_question_bank">C类题库</string>
+    <string name="type_a">A类</string>
+    <string name="type_b">B类</string>
+    <string name="type_c">C类</string>
+    <string name="type_e">错题库</string>
 </resources>
