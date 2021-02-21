@@ -30,9 +30,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_margin="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:src="@mipmap/ic_class_a" />
 
                 <TextView
@@ -47,12 +47,13 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_marginTop="3dp"
                 android:layout_width="18dp"
                 android:layout_height="12dp"
+                android:layout_marginTop="3dp"
                 android:src="@mipmap/ic_selected_a" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -70,9 +71,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_margin="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:src="@mipmap/ic_class_b" />
 
                 <TextView
@@ -87,12 +88,13 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_marginTop="3dp"
                 android:layout_width="18dp"
                 android:layout_height="12dp"
+                android:layout_marginTop="3dp"
                 android:src="@mipmap/ic_selected_b" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -110,9 +112,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_margin="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:src="@mipmap/ic_class_c" />
 
                 <TextView
@@ -127,12 +129,13 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_marginTop="3dp"
                 android:layout_width="18dp"
                 android:layout_height="12dp"
+                android:layout_marginTop="3dp"
                 android:src="@mipmap/ic_selected_c" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -150,9 +153,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_margin="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:src="@mipmap/ic_class_e" />
 
                 <TextView
@@ -167,9 +170,9 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_marginTop="3dp"
                 android:layout_width="18dp"
                 android:layout_height="12dp"
+                android:layout_marginTop="3dp"
                 android:src="@mipmap/ic_selected_e" />
 
         </LinearLayout>
@@ -177,4 +180,97 @@
     </LinearLayout>
 
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_sequential_exercises" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="51dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="顺序练题"
+                android:textColor="#C18E16"
+                android:textSize="26sp" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_mock_exam" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="51dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="模拟考试"
+                android:textColor="#D45746"
+                android:textSize="26sp" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_random_exercises" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="51dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="随机练题"
+                android:textColor="#3290DB"
+                android:textSize="26sp" />
+        </LinearLayout>
+
+
+    </FrameLayout>
 </LinearLayout>
