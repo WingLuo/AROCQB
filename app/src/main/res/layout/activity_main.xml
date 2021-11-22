@@ -23,6 +23,7 @@
 
             <LinearLayout
                 android:id="@+id/btnSelectA"
+                android:alpha="0.6"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginLeft="15dp"
@@ -53,6 +54,7 @@
                 android:layout_width="18dp"
                 android:layout_height="12dp"
                 android:layout_marginTop="3dp"
+                android:visibility="invisible"
                 android:src="@mipmap/ic_selected_a" />
 
         </LinearLayout>
@@ -196,6 +198,7 @@
 
 
     <FrameLayout
+        android:id="@+id/btnSequentialExercises"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -227,6 +230,7 @@
 
     </FrameLayout>
     <FrameLayout
+        android:id="@+id/btnMockExam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -258,6 +262,7 @@
 
     </FrameLayout>
     <FrameLayout
+        android:id="@+id/btnRandomExercises"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"

@@ -9,6 +9,7 @@ import android.view.View
 import org.litepal.LitePal
 import tech.bootloader.androidbasic.abstrakt.PortraitActivity
 import tech.bootloader.arocqb.R
+import tech.bootloader.arocqb.common.FIRST
 import tech.bootloader.arocqb.database.ExamQuestionBank
 import tech.bootloader.arocqb.database.Statistics
 import tech.bootloader.arocqb.util.AssetsUtil
@@ -21,8 +22,8 @@ class SplashActivity : PortraitActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         findViewById<View>(R.id.progressBar).post {
-            val sp = getSharedPreferences("first", Context.MODE_PRIVATE)
-            val boolean = sp.getBoolean("first", true)
+            val sp = getSharedPreferences(FIRST, Context.MODE_PRIVATE)
+            val boolean = sp.getBoolean(FIRST, true)
             if (boolean) {
                 initPresenter()
             } else {
