@@ -1,16 +1,14 @@
-package tech.bootloader.arocqb
+package tech.bootloader.arocqb.activity
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import org.litepal.LitePal
-import tech.bootloader.androidbasic.InterfaceInitializationView
+import tech.bootloader.androidbasic.abstrakt.PortraitActivity
+import tech.bootloader.arocqb.R
 import tech.bootloader.arocqb.database.ExamQuestionBank
 import tech.bootloader.arocqb.database.Statistics
 import tech.bootloader.arocqb.util.AssetsUtil
@@ -18,7 +16,7 @@ import tech.bootloader.arocqb.util.DBManager
 import java.lang.Exception
 
 
-class SplashActivity : AppCompatActivity(), InterfaceInitializationView {
+class SplashActivity : PortraitActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
