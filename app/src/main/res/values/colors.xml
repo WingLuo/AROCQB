@@ -7,4 +7,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="textDeep">#FF333333</color>
     <color name="textDeepSupport">#99333333</color>
+    <color name="backgroundGray">#F8F8F8</color>
+    <color name="correctColor">#6ADB6A</color>
+    <color name="wrongColor">#DB6A6A</color>
 </resources>

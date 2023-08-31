@@ -2,6 +2,7 @@ package tech.bootloader.arocqb.activity
 
 import android.content.Context
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import org.litepal.LitePal
@@ -44,7 +45,7 @@ class MainActivity : PortraitActivity() {
 
 
         binding.btnSelectA.setOnClickListener {
-            if (binding.ivA.visibility ==View.VISIBLE) return@setOnClickListener
+            if (binding.ivA.visibility == View.VISIBLE) return@setOnClickListener
             resetButton()
             binding.btnSelectA.alpha = 1f
             binding.ivA.visibility = View.VISIBLE
@@ -52,7 +53,7 @@ class MainActivity : PortraitActivity() {
 
         }
         binding.btnSelectB.setOnClickListener {
-            if (binding.ivA.visibility ==View.VISIBLE) return@setOnClickListener
+            if (binding.ivA.visibility == View.VISIBLE) return@setOnClickListener
 
             resetButton()
 
@@ -62,7 +63,7 @@ class MainActivity : PortraitActivity() {
 
         }
         binding.btnSelectC.setOnClickListener {
-            if (binding.ivA.visibility ==View.VISIBLE) return@setOnClickListener
+            if (binding.ivA.visibility == View.VISIBLE) return@setOnClickListener
             resetButton()
             binding.btnSelectC.alpha = 1f
             binding.ivC.visibility = View.VISIBLE
@@ -70,7 +71,7 @@ class MainActivity : PortraitActivity() {
 
         }
         binding.btnSelectE.setOnClickListener {
-            if (binding.ivA.visibility ==View.VISIBLE) return@setOnClickListener
+            if (binding.ivA.visibility == View.VISIBLE) return@setOnClickListener
             resetButton()
             binding.btnSelectE.alpha = 1f
             binding.ivE.visibility = View.VISIBLE
@@ -79,18 +80,21 @@ class MainActivity : PortraitActivity() {
         }
         val grade = SharedPreferencesUtils.getStringSharedPreferences(GRADE)
         when (grade) {
-            "B" ->{
+            "B" -> {
                 binding.btnSelectB.alpha = 1f
                 binding.ivB.visibility = View.VISIBLE
             }
+
             "C" -> {
                 binding.btnSelectC.alpha = 1f
                 binding.ivC.visibility = View.VISIBLE
             }
+
             "E" -> {
                 binding.btnSelectE.alpha = 1f
                 binding.ivE.visibility = View.VISIBLE
             }
+
             else -> {
                 binding.btnSelectA.alpha = 1f
                 binding.ivA.visibility = View.VISIBLE
@@ -99,6 +103,10 @@ class MainActivity : PortraitActivity() {
 
         }
         binding.btnSequentialExercises.setOnClickListener {
+            var grade = SharedPreferencesUtils.getStringSharedPreferences(GRADE)
+            if (TextUtils.isEmpty(grade)) grade = "A"
+            DetailActivity.actionStart(this, grade!!, 0)
+
 
         }
         binding.btnRandomExercises.setOnClickListener {
@@ -121,7 +129,7 @@ class MainActivity : PortraitActivity() {
         binding.ivC.visibility = View.INVISIBLE
         binding.ivE.visibility = View.INVISIBLE
 
-        SharedPreferencesUtils.saveIntSharedPreferences(INDEX,0)
+        SharedPreferencesUtils.saveIntSharedPreferences(INDEX, 0)
 
     }
 
